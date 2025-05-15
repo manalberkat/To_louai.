@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Special Love - Louai & Manal</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+  }
+  .container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 30px 40px;
+    max-width: 400px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .counter {
+    font-size: 1.8em;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #e74c3c;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  p {
+    font-size: 1.2em;
+    line-height: 1.4;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  .date {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #555;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our Special Love</h1>
+    <div class="counter" id="counter"></div>
+    
+<p>Louai, every moment with you is a precious chapter in my heart. No matter the distance or time, my love for you only grows stronger. You are my home, my joy, my forever. No matter where life takes us, my heart will always run back to you, Louai.</p>
+
+    <div class="date">Since December 18, 2024 — The day my heart found where it belongs.</div>
+  </div>
+
+<script>
+  const startDate = new Date("2024-12-18T00:00:00");
+
+  function updateCounter() {
+    const now = new Date();
+    let diffTime = now - startDate;
+
+    let totalSeconds = Math.floor(diffTime / 1000);
+    let totalMinutes = Math.floor(totalSeconds / 60);
+    let totalHours = Math.floor(totalMinutes / 60);
+    let totalDays = Math.floor(totalHours / 24);
+    let totalMonths = Math.floor(totalDays / 30);
+
+    let seconds = totalSeconds % 60;
+    let minutes = totalMinutes % 60;
+    let hours = totalHours % 24;
+    let days = totalDays % 30;
+    let months = totalMonths;
+
+    const counterElem = document.getElementById("counter");
+    counterElem.textContent = `${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+  }
+
+  updateCounter();
+  setInterval(updateCounter, 1000);
+</script>
+</body>
+</html>
